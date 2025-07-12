@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sudoku Game</title>
+  <style>
+    body {font-family: Arial, sans-serif; display:flex; flex-direction:column; align-items:center; margin-top:20px;}
+    #grid {border-collapse:collapse;}
+    #grid input {width:40px; height:40px; text-align:center; font-size:20px; border:none; outline:none;}
+    /* Bold lines for 3x3 boxes */
+    #grid tr:nth-child(3n) td {border-bottom:2px solid #000;}
+    #grid td:nth-child(3n){border-right:2px solid #000;}
+    #grid input.conflict {background:#fdd;}
+    #grid td{border:1px solid #000;width:40px;height:40px;text-align:center;}
+    /* Light grey inner gridlines in Killer mode */
+    body.killer #grid td{border-color:#999;}
+    body.killer #grid tr:nth-child(3n) td{border-bottom:2px solid #000;}
+    body.killer #grid td:nth-child(3n){border-right:2px solid #000;}
+    /* Grey highlight for completed cages */
+    .cage-complete input{background:#e6e6e6;}
+    #controls {margin-top:20px;}
+  </style>
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <h1 style="display:flex;align-items:center;gap:8px;">
+    <select id="mode" style="font-size:32px;font-weight:bold;border:none;background:none;appearance:none;cursor:pointer;width:180px;text-align:right;text-align-last:right;">
+      <option value="classic" selected>▾ Classic</option>
+      <option value="killer">▾ Killer</option>
+    </select>
+    Sudoku
+  </h1>
+  <table id="grid"></table>
+  <div id="controls">
+    <label>Difficulty:
+      <select id="level">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+    </label>
+    <button id="new">New Game</button>
+    <button id="check">Check</button>
+    <button id="solve-row">Solve Row</button>
+    <button id="solve-col">Solve Col</button>
+    <button id="solve-block">Solve Block</button>
+  </div>
+
+  <script src="game_catalog.js"></script>
+  <script src="classic_game_logic.js"></script>
+  <script src="killer_game_logic.js"></script>
+
+  <script>
+    // Choose mode and initialise appropriate game logic
+    function start(){
+      const mode=document.getElementById('mode').value;
+      // --- global visual & data reset ---
+      document.body.className = mode;
+      const grid=document.getElementById('grid');
+      if(grid) grid.innerHTML='';
+      // remove any leftover killer overlays
+      document.querySelectorAll('.sum-label,.cage-border').forEach(el=>el.remove());
+      // reset globals that may persist across modes
+      window.currentCageMap=null;
+      // ensure correct conflict checker will be set by downstream init
+      window.refreshConflicts = mode==='killer'?()=>{}:()=>{};
+      // delegate to mode-specific bootstrap
+      (mode==='killer'?window.initKiller:window.initClassic)();
+    }
+    // re-start when user changes mode
+    document.addEventListener('DOMContentLoaded',()=>{
+      const sel=document.getElementById('mode');
+      sel.addEventListener('change',start);
+      start();
+    });
+  </script>
+ </body>
+ </html>

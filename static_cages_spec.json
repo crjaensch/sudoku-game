@@ -1,0 +1,128 @@
+{
+  "cages": [
+    {
+      "sum": 7,
+      "cells": ["R1C1", "R1C2"]
+    },
+    {
+      "sum": 11,
+      "cells": ["R1C3", "R1C4"]
+    },
+    {
+      "sum": 22,
+      "cells": ["R1C5", "R1C6", "R2C6", "R3C6", "R4C6"]
+    },
+    {
+      "sum": 17,
+      "cells": ["R1C7", "R1C8", "R2C7"]
+    },
+    {
+      "sum": 10,
+      "cells": ["R1C9", "R2C9"]
+    },
+    {
+      "sum": 2,
+      "cells": ["R2C1"]
+    },
+    {
+      "sum": 22,
+      "cells": ["R2C2", "R2C3", "R3C3"]
+    },
+    {
+      "sum": 15,
+      "cells": ["R2C4", "R2C5", "R3C4"]
+    },
+    {
+      "sum": 10,
+      "cells": ["R3C1", "R4C1"]
+    },
+    {
+      "sum": 10,
+      "cells": ["R2C8", "R3C8"]
+    },
+    {
+      "sum": 17,
+      "cells": ["R3C2", "R4C2"]
+    },
+    {
+      "sum": 15,
+      "cells": ["R3C5", "R4C4", "R4C5"]
+    },
+    {
+      "sum": 6,
+      "cells": ["R3C7"]
+    },
+    {
+      "sum": 14,
+      "cells": ["R3C9", "R4C8", "R4C9"]
+    },
+    {
+      "sum": 13,
+      "cells": ["R5C1", "R5C2", "R5C3"]
+    },
+    {
+      "sum": 19,
+      "cells": ["R5C4", "R5C5", "R5C6"]
+    },
+    {
+      "sum": 18,
+      "cells": ["R5C8", "R6C7", "R6C8", "R7C8"]
+    },
+    {
+      "sum": 13,
+      "cells": ["R5C9", "R6C9"]
+    },
+    {
+      "sum": 16,
+      "cells": ["R6C1", "R6C2", "R6C3"]
+    },
+    {
+      "sum": 20,
+      "cells": ["R6C4", "R6C5", "R6C6", "R7C4"]
+    },
+    {
+      "sum": 9,
+      "cells": ["R7C1", "R8C1", "R8C2"]
+    },
+    {
+      "sum": 15,
+      "cells": ["R7C2", "R7C3"]
+    },
+    {
+      "sum": 19,
+      "cells": ["R7C5", "R8C5", "R8C6"]
+    },
+    {
+      "sum": 2,
+      "cells": ["R7C6"]
+    },
+    {
+      "sum": 11,
+      "cells": ["R7C7", "R8C7"]
+    },
+    {
+      "sum": 8,
+      "cells": ["R7C9", "R8C9"]
+    },
+    {
+      "sum": 10,
+      "cells": ["R8C3", "R9C3"]
+    },
+    {
+      "sum": 4,
+      "cells": ["R8C4", "R9C4"]
+    },
+    {
+      "sum": 11,
+      "cells": ["R9C1", "R9C2"]
+    },
+    {
+      "sum": 11,
+      "cells": ["R9C5", "R9C6"]
+    },
+    {
+      "sum": 25,
+      "cells": ["R9C7", "R9C8", "R9C9", "R8C8"]
+    }
+  ]
+}
